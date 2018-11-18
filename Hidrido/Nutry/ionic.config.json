@@ -1,0 +1,7 @@
+{
+  "name": "Nutry",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
