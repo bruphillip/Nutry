@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-label> Diario </ion-label>
+      <ion-select value="hoje" interface="action-sheet" cancel-text="Cancelar">
+        <ion-select-option value="hoje">Hoje</ion-select-option>
+        <ion-select-option value="ontem">Ontem</ion-select-option>
+        <ion-select-option value="27072018">27/07/2018</ion-select-option>
+        <ion-select-option value="27082018">27/08/2018</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <progress-bar progress="70"></progress-bar>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div style="height: 100px;">
+        <ion-grid>
+          <ion-row align-self-start>
+            <ion-col style="text-align: center">
+              <img src="assets/img/bom.svg" class="icon-smile" />
+              <p style="text-align: center">Liquidos</p>
+            </ion-col>
+            <ion-col style="text-align: center">
+              <img src="assets/img/bom.svg" class="icon-smile" />
+              <p style="text-align: center">Legumes</p>
+            </ion-col>
+            <ion-col style="text-align: center">
+              <img src="assets/img/regular.svg" class="icon-smile" />
+              <p style="text-align: center">Verduras</p>
+            </ion-col>
+            <ion-col style="text-align: center">
+              <img src="assets/img/ruim.svg" class="icon-smile" />
+              <p style="text-align: center">Frutas</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title
+        >Agua
+        <ion-badge color="primary" float-right>2/5</ion-badge>
+      </ion-card-title>
+      <ion-card-subtitle> Hidrate-se | Copos de 250 ml </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content> <items-consumed></items-consumed> </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title
+        >Legumes
+        <ion-badge color="primary" float-right>1/2</ion-badge>
+      </ion-card-title>
+      <ion-card-subtitle>
+        legumes e verduras são ricos em vitaminas, minerais e fibras.
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-label>
+              <h1 class="text-list">Rucula</h1>
+              <p>3 folhas</p>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option>Unread</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-label>
+              <h1 class="text-list">
+                Alface Crespa
+                <ion-icon name="checkmark-circle" float-right></ion-icon>
+              </h1>
+              <p>3 folhas</p>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option>Unread</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentModal()">
+    <ion-fab-button> <ion-icon name="add"></ion-icon> </ion-fab-button>
+  </ion-fab>
+</ion-content>

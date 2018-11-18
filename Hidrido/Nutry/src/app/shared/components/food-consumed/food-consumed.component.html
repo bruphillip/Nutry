@@ -1,0 +1,62 @@
+<ion-header>
+  <!-- Animated Searchbar -->
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="onBack()">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Alface </ion-card-subtitle>
+      <ion-card-title>Verduras</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img src="assets/img/food/alface.jpg" /> <br />
+      <p>
+        Rica em fibras, ajuda na digestão e no bom funcionamento do intestino,
+        além de apresentar pequenos teores de minerais como cálcio e fósforo
+      </p>
+      <ion-item>
+        <ion-label position="floating">Quantidade</ion-label>
+        <ion-input [(ngModel)]="qtd_food"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Principais Nutrientes</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <br />
+      <ion-grid>
+        <ion-row justify-content-center text-center>
+          <ion-col text-center>
+            <div class="cycle">C</div>
+            Vitamina
+          </ion-col>
+
+          <ion-col text-center>
+            <div class="cycle">B1</div>
+            Vitamina
+          </ion-col>
+
+          <ion-col text-center>
+            <div class="cycle">F</div>
+            Ferro
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="onSave()">
+        <ion-fab-button>
+                <ion-icon name="checkmark"></ion-icon> </ion-fab-button>
+      </ion-fab>
+</ion-content>

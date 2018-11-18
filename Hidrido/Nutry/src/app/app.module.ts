@@ -1,37 +1,29 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { RouteReuseStrategy } from '@angular/router';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage
-  ],
+  declarations: [AppComponent],
+  entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage
-  ],
+    SharedModule,
+     IonicModule.forRoot({ mode: 'md' }),
+      AppRoutingModule
+    ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
